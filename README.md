@@ -1,5 +1,5 @@
 # BlackSheep empty project template
-Basic project template for BlackSheep web framework.
+Basic project template for [BlackSheep](https://github.com/RobertoPrevato/BlackSheep) web framework.
 
 ## Getting started
 1. Clone the repository
