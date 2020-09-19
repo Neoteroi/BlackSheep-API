@@ -10,7 +10,6 @@ app.on_start += context.initialize
 
 
 class AsyncEventHandler:
-
     def __init__(self, context):
         self.__handlers = []
         self.context = context
@@ -38,7 +37,6 @@ class AsyncEventHandler:
 
 
 class ServicesRegistrationContext:
-
     def __init__(self):
         self.initialize = AsyncEventHandler(self)
         self.dispose = AsyncEventHandler(self)
