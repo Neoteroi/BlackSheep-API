@@ -4,24 +4,20 @@ Services registered inside a `rodi.Container` are automatically injected into re
 handlers.
 
 For more information and documentation, see `rodi` Wiki and examples:
-    https://github.com/RobertoPrevato/rodi/wiki
-    https://github.com/RobertoPrevato/rodi/wiki/Examples
+    https://github.com/Neoteroi/rodi/wiki
+    https://github.com/Neoteroi/rodi/tree/main/examples
 """
 from typing import Tuple
 
-from roconfiguration import Configuration
+from config.common import Configuration
 from rodi import Container
-
-from core.events import ServicesRegistrationContext
 
 
 def configure_services(
     configuration: Configuration,
-) -> Tuple[Container, ServicesRegistrationContext, Configuration]:
+) -> Tuple[Container, Configuration]:
     container = Container()
-
-    context = ServicesRegistrationContext()
 
     container.add_instance(configuration)
 
-    return container, context, configuration
+    return container, configuration
