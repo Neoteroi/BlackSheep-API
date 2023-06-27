@@ -2,14 +2,14 @@
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template to
 boostrap a new BlackSheep v2 application to build a Web API.
 
-## Using the BlackSheep CLI (recommended)
+## Getting started
 
 ```bash
 pip install blacksheep-cli
 ```
 
 ```bash
-blacksheep create api
+blacksheep create --template api
 
 🚀 Project name example
 🤖 Use controllers? Yes
@@ -21,15 +21,6 @@ blacksheep create api
    INI
    None
 ```
-
-## Using Cookiecutter
-
-```bash
-pip install cookiecutter
-
-cookiecutter https://github.com/Neoteroi/BlackSheep-API
-```
-
 
 ## Documentation
 The documentation of the [framework can be read here](https://www.neoteroi.dev/blacksheep/).
@@ -53,3 +44,12 @@ For more information and documentation about `rodi`, see:
 - [rodi](https://github.com/RobertoPrevato/rodi)
 - [rodi wiki](https://github.com/RobertoPrevato/rodi/wiki)
 - [rodi wiki examples](https://github.com/RobertoPrevato/rodi/wiki/Examples)
+
+## Using Cookiecutter
+The template can also be used with `Cookiecutter`.
+
+```bash
+pip install cookiecutter
+
+cookiecutter https://github.com/Neoteroi/BlackSheep-API
+```
