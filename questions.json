@@ -21,8 +21,7 @@
             "YAML",
             "TOML",
             "JSON",
-            "INI",
-            "None"
+            "INI"
         ],
         "qmark": "🔧"
     }
