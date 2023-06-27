@@ -5,11 +5,13 @@ from blacksheep import Application
 from config.common import Configuration
 from rodi import Container
 
-from .auth import configure_authentication
-{%- if cookiecutter.use_openapi | int %}
-from .docs import configure_docs
+from app.auth import configure_authentication
+from app.config import load_configuration
+{%- if cookiecutter.use_openapi == "True" %}
+from app.docs import configure_docs
 {%- endif %}
-from .errors import configure_error_handlers
+from app.errors import configure_error_handlers
+from app.services import configure_services
 
 
 def configure_application(
@@ -22,7 +24,10 @@ def configure_application(
 
     configure_error_handlers(app)
     configure_authentication(app, config)
-{%- if cookiecutter.use_openapi | int %}
+{%- if cookiecutter.use_openapi == "True" %}
     configure_docs(app, config)
 {%- endif %}
     return app
+
+
+app = configure_application(*configure_services(load_configuration()))

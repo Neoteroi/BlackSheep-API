@@ -1,3 +1,6 @@
+"""
+Common domain models reused across several API endpoints.
+"""
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum

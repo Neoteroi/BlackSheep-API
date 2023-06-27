@@ -17,7 +17,7 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-python main.py
+python dev.py
 ```
 
 ### For Windows
@@ -29,5 +29,5 @@ venv\Scripts\activate
 
 pip install -r requirements.txt
 
-python main.py
+python dev.py
 ```
