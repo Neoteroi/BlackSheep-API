@@ -1,0 +1,6 @@
+{
+    "project_name": "blacksheep-api",
+    "use_controllers": true,
+    "use_openapi": true,
+    "app_settings_format": ["JSON", "YAML", "TOML", "INI"]
+}
