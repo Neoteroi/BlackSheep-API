@@ -19,7 +19,6 @@ blacksheep create --template api
    TOML
    JSON
    INI
-   None
 ```
 
 ## Documentation
