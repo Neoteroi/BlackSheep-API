@@ -14,7 +14,8 @@ blacksheep create --template api
 🚀 Project name example
 🤖 Use controllers? Yes
 📜 Use OpenAPI Documentation? Yes
-🔧 App settings format (Use arrow keys)
+🔧 App settings library essentials-configuration
+🔩 App settings format (Use arrow keys)
  » YAML
    TOML
    JSON
@@ -27,8 +28,9 @@ The documentation of the [framework can be read here](https://www.neoteroi.dev/b
 ## Features
 
 - Basic folder structure
+- Settings handled using [Pydantic Settings Management](https://docs.pydantic.dev/latest/usage/settings/) or [essentials-configuration](https://github.com/Neoteroi/essentials-configuration)
 - Strategy to read configuration from YAML, TOML, JSON, INI files, and
-  environmental variables, or settings stored in a user's folder using
+  environmental variables, or settings stored in a user's folder when using
   [`essentials-configuration`](https://github.com/Neoteroi/essentials-configuration)
 - Handling of [dependency injection](https://www.neoteroi.dev/blacksheep/dependency-injection/), using [`rodi`](https://github.com/RobertoPrevato/rodi)
 - Configuration of exceptions handlers
