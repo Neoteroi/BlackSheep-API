@@ -3,6 +3,7 @@ import shutil
 
 
 project_name = "{{ cookiecutter.project_name }}"
+settings_library = "{{ cookiecutter.app_settings_library }}"
 settings_format = "{{ cookiecutter.app_settings_format }}"
 use_openapi = "{{ cookiecutter.use_openapi }}" == "True"
 use_controllers = "{{ cookiecutter.use_controllers }}" == "True"
@@ -18,7 +19,10 @@ else:
     remove_paths.append("app/controllers")
 
 for possible_format in {"toml", "yaml", "ini", "json"}:
-    if settings_format.lower() != possible_format:
+    if (
+        settings_library != "essentials-configuration"
+        or settings_format.lower() != possible_format
+    ):
         remove_paths.append(f"settings.{possible_format}")
         remove_paths.append(f"settings.dev.{possible_format}")
 
@@ -30,6 +34,7 @@ def remove(item_path: str):
             shutil.rmtree(item_path)
         else:
             os.unlink(item_path)
+
 
 for path in remove_paths:
     remove(path)
