@@ -79,10 +79,6 @@ class App(BaseModel):
     show_error_details: bool
 
 
-class Site(BaseModel):
-    copyright: str
-
-
 class Settings(BaseModel):
     app: App
     info: APIInfo
