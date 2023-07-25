@@ -17,6 +17,7 @@ if use_controllers:
     remove_paths.append("app/routes")
 else:
     remove_paths.append("app/controllers")
+    remove_paths.append("app/views")
 
 for possible_format in {"toml", "yaml", "ini", "json"}:
     if (
