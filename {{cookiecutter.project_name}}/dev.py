@@ -18,11 +18,19 @@ else:
 
 if __name__ == "__main__":
     os.environ["APP_ENV"] = "dev"
+    port = int(os.environ.get("APP_PORT", 8000))
 
     console = Console()
     console.rule("[bold yellow]Running for local development", align="left")
-{%- if cookiecutter.use_openapi == "True" %}
+{%- if cookiecutter.use_openapi %}
     console.print("[bold yellow]Visit http://localhost:8000/docs")
 {%- endif %}
 
-    uvicorn.run("app.main:app", host="localhost", lifespan="on", log_level="info", reload=True)
+    uvicorn.run(
+        "app.main:app",
+        host="localhost",
+        port=port,
+        lifespan="on",
+        log_level="info",
+        reload=True,
+    )
