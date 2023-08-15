@@ -27,3 +27,5 @@ class ExamplesController(Controller):
         """
         Adds an example.
         """
+        return {"example": example}
+
