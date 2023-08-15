@@ -23,7 +23,7 @@ class ExamplesController(Controller):
         return list(f"example {i}" for i in range(3))
 
     @post()
-    async def add_example(self, example: str):
+    async def add_example(self, example: str) -> dict:
         """
         Adds an example.
         """
