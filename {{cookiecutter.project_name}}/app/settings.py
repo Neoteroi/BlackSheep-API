@@ -7,16 +7,17 @@ values.
 
 https://docs.pydantic.dev/latest/usage/settings/
 """
-from pydantic import BaseModel, BaseSettings
+from pydantic import BaseModel
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class APIInfo(BaseModel):
-    title = "{{ cookiecutter.project_name }} API"
-    version = "0.0.1"
+    title: str = "{{ cookiecutter.project_name }} API"
+    version: str = "0.0.1"
 
 
 class App(BaseModel):
-    show_error_details = False
+    show_error_details: bool = False
 
 
 class Site(BaseModel):
@@ -32,8 +33,7 @@ class Settings(BaseSettings):
     # export app_app='{"show_error_details": True}'
     app: App = App()
 
-    class Config:
-        env_prefix = "APP_"  # defaults to no prefix, i.e. ""
+    model_config = SettingsConfigDict(env_prefix='APP_')
 
 
 def load_settings() -> Settings:

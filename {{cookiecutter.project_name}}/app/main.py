@@ -21,6 +21,8 @@ def configure_application(
         services=services, show_error_details=settings.app.show_error_details
     )
 
+
+
     configure_error_handlers(app)
     configure_authentication(app, settings)
 {%- if cookiecutter.use_openapi %}
