@@ -9,8 +9,9 @@ from app.auth import configure_authentication
 from app.docs import configure_docs
 {%- endif %}
 from app.errors import configure_error_handlers
+from app.diagnostics import get_diagnostic_app
 from app.services import configure_services
-from app.settings import load_settings, Settings
+from app.settings import Settings
 
 
 def configure_application(
@@ -21,8 +22,6 @@ def configure_application(
         services=services, show_error_details=settings.app.show_error_details
     )
 
-
-
     configure_error_handlers(app)
     configure_authentication(app, settings)
 {%- if cookiecutter.use_openapi %}
@@ -31,4 +30,11 @@ def configure_application(
     return app
 
 
-app = configure_application(*configure_services(load_settings()))
+def get_app():
+    try:
+        return configure_application(*configure_services())
+    except Exception as exc:
+        return get_diagnostic_app(exc)
+
+
+app = get_app()
