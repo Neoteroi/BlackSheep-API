@@ -31,3 +31,7 @@ pip install -r requirements.txt
 
 python dev.py
 ```
+
+## Docker image
+
+The project template includes a `Dockerfile`.
