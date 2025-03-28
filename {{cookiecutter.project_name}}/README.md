@@ -35,3 +35,7 @@ python dev.py
 ## Docker image
 
 The project template includes a `Dockerfile`.
+
+```
+docker build -t projectname .
+```

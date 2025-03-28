@@ -53,3 +53,19 @@ pip install cookiecutter
 
 cookiecutter https://github.com/Neoteroi/BlackSheep-API
 ```
+
+## Docker image
+
+The project template includes a `Dockerfile`.
+
+To test using the image from Docker Hub:
+
+```bash
+docker run --name apidemo --rm -p 8080:80 robertoprevato/apidemo
+```
+
+And navigate to:
+
+```bash
+http://localhost:8080/docs/
+```
