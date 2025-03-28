@@ -28,7 +28,7 @@ if __name__ == "__main__":
     console = Console()
     console.rule("[bold yellow]Running for local development", align="left")
 {%- if cookiecutter.use_openapi %}
-    console.print(f"[bold yellow]Visit http://localhost:{port}/{prefix}/docs/\n")
+    console.print(f"[bold yellow]Visit http://localhost:{port}/{prefix}docs/\n")
 {%- endif %}
 
     uvicorn.run(
